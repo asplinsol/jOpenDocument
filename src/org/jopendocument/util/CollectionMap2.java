@@ -476,7 +476,7 @@ public abstract class CollectionMap2<K, C extends Collection<V>, V> extends Abst
     }
 
     @Override
-    public final boolean remove(final K k, final V v) {
+    public final boolean remove2(final K k, final V v) {
         return this.removeAll(k, Collections.singleton(v));
     }
 

@@ -229,7 +229,7 @@ class UnmodifiableCollectionMap<K, C extends Collection<V>, V> extends AbstractM
     }
 
     @Override
-    public boolean remove(final K k, final V v) {
+    public boolean remove2(final K k, final V v) {
         throw new UnsupportedOperationException();
     }
 
