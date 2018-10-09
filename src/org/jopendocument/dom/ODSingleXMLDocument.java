@@ -345,8 +345,11 @@ public class ODSingleXMLDocument extends ODXMLDocument implements Cloneable {
     private static void prependToRoot(Document settings, final Element root) {
         if (settings != null) {
             copyNS(settings, root.getDocument());
-            final Element officeSettings = (Element) settings.getRootElement().getChildren().get(0);
-            root.addContent(0, (Element) officeSettings.clone());
+            List children = settings.getRootElement().getChildren();
+            if(children != null && !children.isEmpty()) {
+                final Element officeSettings = (Element) children.get(0);
+                root.addContent(0, (Element) officeSettings.clone());
+            }
         }
     }
 
